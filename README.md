@@ -10,3 +10,5 @@ You can use the ```playground.cpp``` file to test your implementations with smal
 ```g++ btester.cpp && ./a.out``` for browser tests.
 
 ```g++ wtester.cpp && ./a.out``` for window tests.
+
+NOTE: If you are a MacOSX user, check out my comments inside the ```btester.cpp``` and ```wtester.cpp``` files.
