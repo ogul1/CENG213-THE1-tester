@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     const int tc = 200;
     int passed = 0;
-    char compile[50], compare[50], expected[50], sed1[80], sed2[80];
+    char compile[50], compare[50], expected[50], sed1[80], sed2[80], failure[50];;
 
     for (int i = 1; i <= tc; ++i) {
 
@@ -35,7 +35,14 @@ int main() {
             ++passed;
             cout << "Case " << i << " PASSED.\n" << std::flush;
         } else {
+            cout << "----------------------------------\n" << flush;
             cout << "Case " << i << " FAILED.\n" << std::flush;
+            cout << "Given Output:\n" << flush;
+            system("cat g.txt");
+            cout << "Expected Output:\n" << flush;
+            snprintf(failure, 50, "cat browser_out/output%d.txt", i);
+            system(failure);
+            cout << "----------------------------------\n" << flush;
         }
     }
 
