@@ -6,3 +6,5 @@ Before you start, fill in the corresponding .cpp files in the tester folder.
 You can use the ```playground.cpp``` file to test your implementations with small inputs and track your allocations easily.
 
 ```g++ -std=c++17 playground.cpp``` to run the file.
+
+Test cases don't exist because the function definitions are very vague.
