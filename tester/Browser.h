@@ -4,7 +4,6 @@
 #include "Tab.h"
 #include "LinkedList.h"
 #include "Window.h"
-#include "memory_leak.h"
 
 class Browser
 {
@@ -25,20 +24,6 @@ public:
     void closeAllWindows();
     void closeEmptyWindows();
     void print();
-    
-    static void* operator new(std::size_t size, const char* file, const char* func, int line)
-    {
-        _Total_Memory_Allocated += size;
-        std::cout << "Allocated " << size << " bytes for Browser in " << file << " line " << line << " function " << func << "\n";
-        return ::operator new(size);
-    }
-    
-    static void operator delete(void* ptr, std::size_t size)
-    {
-        _Total_Memory_Deallocated += size;
-        std::cout << "Deallocated " << size << " bytes for Browser in " << file << " line " << line << " function " << func << "\n";
-        ::operator delete(ptr);
-    }
 
 private:
     LinkedList<Window> windows;
