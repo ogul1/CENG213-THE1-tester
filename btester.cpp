@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     const int tc = 200;
     int passed = 0;
-    char compile[50], compare[50], expected[50], sed1[80], sed2[80], failure[50];
+    char compile[50], compare[50], expected[50], failure[50];
 
     for (int i = 1; i <= tc; ++i) {
 
