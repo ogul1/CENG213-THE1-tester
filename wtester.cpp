@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     const int tc = 200;
     int passed = 0;
-    char compile[50], compare[50], expected[50], sed1[80], sed2[80], failure[50];;
+    char compile[50], compare[50], expected[50], failure[50];
 
     for (int i = 1; i <= tc; ++i) {
 
@@ -13,21 +13,6 @@ int main() {
         system(compile);
         
         system("./a.out > g.txt");
-
-        system("sed -i '/^Deallocated/d' g.txt");
-        system("sed -i '/^Allocated/d' g.txt");
-
-        // system("sed -i '' '/^Deallocated/d' g.txt"); // uncomment if you use macosx
-        // system("sed -i '' '/^Allocated/d' g.txt");   // and comment the other counterparts.
-
-        snprintf(sed1, 80, "sed -i '/^Deallocated/d' window_out/output%d.txt", i);
-        snprintf(sed2, 80, "sed -i '/^Allocated/d' window_out/output%d.txt", i);
-
-        // snprintf(sed1, 80, "sed -i '' '/^Deallocated/d' window_out/output%d.txt", i); // uncomment if mac
-        // snprintf(sed2, 80, "sed -i '' '/^Allocated/d' window_out/output%d.txt", i);
-
-        system(sed1);
-        system(sed2);
 
         snprintf(compare, 50, "cmp -s window_out/output%d.txt g.txt", i);
 
